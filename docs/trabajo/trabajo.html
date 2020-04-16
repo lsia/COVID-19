@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Estado actual</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+	  		<h1><a href="../index.html" class="logo">LSIA Covid-19</a></h1>
+        <ul class="list-unstyled components mb-5">
+          <li class="active">
+            <a href="#estado_actual">Estado actual</a>
+          </li>
+          <li>
+              <a href="#estrategias"> Estrategias en estudio</a>
+          </li>
+          <li>
+            <a href="#contact_tracing">     Contact Tracing</a>
+          </li>
+          <li>
+            <a href="#qr">     Empleo de QR</a>
+          </li>
+          <li>
+            <a href="#listado">     Listado de proyectos relevantes</a>
+          </li>
+          
+          <li>
+            <a href="#conclusiones"> Conclusiones</a>
+          </li>
+          <li>
+            <a href="#referencias"> Referencias</a>
+          </li>
+           <a class="logo-img" href="http://lsia.fi.uba.ar/"> <img class="logo-img" src="../assets/images/lsia80.png" alt="Logo"></a>
+            <a class="logo-img" href="http://www.fi.uba.ar/"> <img class="logo-img" src="../assets/images/fiuba.png" alt="Logo"></a>
+        </ul>
+    	</nav>
+
+        <!-- Page Content  -->
+     <div class="main">
+      <div id="estado_actual" class="p-4 p-md-5 pt-5">
+        <h2 class="mb-4">Estado actual</h2>
+        
+        <h4 class="mb-4">Aplicaciones móviles de uso masivo como medio para desacelerar la propagación de COVID-19</h4>
+<p> Desde de su aparición en diciembre de 2019 en Wuhan, el virus se ha extendido a más de 100 países [<a href="#Xwood2020infections">23</a>]. Al día 31 de Marzo de 2020 se registran 823,479 casos confirmados y 40,636 muertes en todo el mundo [<a href="#Xdong2020interactive">8</a>]. El aumento rápido de casos de COVID-19 es muy alarmante. Muchos países han tomado medidas para reducir el contagio de la enfermedad y evitar que colapsen los sistemas de salud.</p>
+ 
+<p>Tanto en Argentina, como en otros países del mundo se implementó la
+cuarentena obligatoria para asegurar el aislamiento social. Retrasar el pico de las
+infecciones todavía tiene muchos beneficios. En todo el planeta, las agencias de
+salud están aumentando la producción de kits de pruebas y otros elementos
+esenciales: cada día extra que les podemos dar para preparar se traduce en vidas
+salvadas.</p>
+
+<p>En [<a href="#Xferretti2020quantifying">9</a>] y [<a href="#Xhellewell2020feasibility">11</a>] se proponen modelos matemáticos que explican la propagación del virus. Se tienen en cuenta los distintos medios de contagio: personas asintomáticas,
+pre-sintomáticas, sintomáticas y a través del medio ambiente. Además, se explica que la velocidad de propagación de la pandemia depende de las características de la comunidad afectada.</p>
+<p>En este trabajo se evaluará cómo se puede utilizar la tecnología y dispositivos
+móviles para frenar el avance de la pandemia. Cada de las alternativas aquí
+evaluadas tienen con mayor o menor impacto y buscan mitigar distintas
+formas de contagio. El objetivo es que estas soluciones utilizadas en conjunto
+con el aislamiento social u otras medidas ayuden desacelerar el avance de la
+pandemia.</p>
+
+      
+ <h4 class="mb-4">Experiencias de otros países</h4>
+ 
+ <p>Dado que hoy día gran parte de la población tiene acceso a un smartphone,
+ el uso de aplicaciones que hagan uso de los recursos disponibles como la
+ ubicación puede resultar efectivo para frenar la epidemia. En países del sudeste
+ asiático se aplicaron soluciones que involucran el rastreo de los movimientos de
+ los ciudadanos por medio de GPS, bluetooth y códigos QR (para espacios
+ físicos). </p>
+ 
+ <figure>
+    <img src="../assets/images/grafico_paises.png" alt='Datos de Universidad de John Hopkins' />
+    <figcaption>Figura 1. <a href="https://www.ft.com/coronavirus-latest">Datos de Universidad de John Hopkins</a></figcaption>
+</figure>
+ 
+ <p>Corea del Sur y China han demostrado dos sistemas exitosos para contener
+ COVID-19 que hacen un uso extensivo de la tecnología. Los resultados que han visto
+ coinciden con las predicciones de los modelos en [<a href="#Xferretti2020quantifying">9</a>] y [<a href="#Xhellewell2020feasibility">11</a>]: con una tasa de diagnóstico suficiente y una rastreo de contactos directos con personas contagiadas, el COVID-19
+ puede ser contenido [<a href="#Xcovidwatch">4</a>].</p>
+  
+ <h5 class="mb-4">China</h4> 
+ 
+ <p>Fue el primero en crear una aplicación móvil como medida de prevención. Su aplicación utiliza el historial de GPS y otros datos para asignar una puntuación de riesgo. Este puntaje se usa para controlar qué individuos pueden moverse libremente. La intervención de China parece haber sido exitosa, pero requirió una vigilancia estatal de gran alcance que, según los estándares de la mayoría de las democracias liberales, se consideraría altamente invasiva, probablemente ilegal y políticamente desagradable [<a href="#Xmcneil_2020">13</a>]. </p> 
+  
+ <h5 class="mb-4">Corea del Sur</h4> 
+ 
+ <p class="noindent" >Se publica una gran cantidad de información recopilada de los teléfonos celulares de
+                                             pacientes infectados para que otros puedan determinar si habían estado en contacto.
+                                             El éxito de Corea del Sur se atribuyó principalmente a (1) pruebas generalizadas (2)
+                                             o de contactos y (3) aislamiento de casos. La sus solución de alerta móvil no
+                                             anonimiza efectivamente los datos del paciente. Recopilan datos de ubicación de
+                                             entrevistas, historial de GPS del teléfono móvil, cámaras de vigilancia y registros
+                                             de tarjetas de crédito, y luego envían alertas de texto con el historial de
+                                             ubicación de los pacientes. Al igual que la intervención en China, esto parece ser
+                                             efectivo, pero prácticamente imposible de aplicar en un régimen democrático
+                                             <span class="cite">[<a
+                                             href="#Xnormilemar_voosenmar_cohenmar_ortega_ortega_ortega_2020">16</a>]</span>.
+ 
+  <h5 class="mb-4">Israel</h4>  
+  
+  <p class="noindent" >se aprobó una legislación para permitir que el gobierno rastree los datos del teléfono
+                                             móvil de personas con sospecha infección <span class="cite">[<a
+                                             href="#Xtidy_2020">20</a>]</span>.
+     
+ <h5 class="mb-4">Taiwan</h4> 
+ 
+ <p class="noindent" >Las instituciones médicas tuvieron acceso a los historiales de viaje de los pacientes
+                                             <span class="cite">[<a
+                                             href="#Xwang2020response">22</a>]</span>, y las autoridades rastrearon los datos de ubicación del teléfono de cualquier
+                                             persona en cuarentena <span class="cite">[<a
+                                             href="#Xlee_2020">12</a>]</span>.
+ 
+   <h5 class="mb-4">Singapur</h4>   
+   
+   <p class="noindent" >La población adoptó una aplicación llamada <span
+                                             class="ecti-1000">TraceTogether </span>de fácil usabilidad
+                                             financiada por el gobierno. Cada vez que un individuo da positivo de COVID-19, se
+                                             contacta instantáneamente a cada persona que posiblemente haya estado en
+                                             contacto directo con el infectado durante el período y ésta debe cumplir una
+                                             cuarentena obligatoria de dos semanas. En <span class="cite">[<a
+                                             href="#Xferretti2020quantifying">9</a>]</span>, <span class="cite">[<a
+                                             href="#Xhebert2020beyond">10</a>]</span> y <span class="cite">[<a
+                                             href="#Xhellewell2020feasibility">11</a>]</span> se estudia la efectividad
+                                             de este tipo de aplicaciones con modelos matemáticos de propagación del
+                                             virus y concluyen que es una forma efectiva de frenar la propagación del
+                                             virus.
+                                             <!--l. 124--><p class="indent" >   En su solución desarrollaron un nuevo protocolo llamado <span
+                                             class="ecti-1000">BlueTrace </span><span class="cite">[<a
+                                             href="#Xbluetrace">21</a>]</span>. La
+                                             aplicación almacena información de dispositivos cercanos en una red P2P,
+                                             descentralizada para preservar la privacidad de los datos, al mismo tiempo el análisis
+                                             de datos y control de epidemia es centralizado por el Ministro de Salud del gobierno
+                                             de Singapur. En <span class="cite">[<a
+                                             href="#Xcho2020contact">7</a>]</span> se hace una muy buena investigación sobre los problemas de
+                                             privacidad y peligros de infiltración de <span
+                                             class="ecti-1000">TraceTogether</span>. En particular se discuten
+
+
+
+                                             problemas legales en Estados Unidos para la adopción de la aplicación y se proponen
+                                             mejoras.
+                                             <!--l. 126--><p class="indent" >   La idea de Singapur ha levantado tales expectativas que varios países ya se
+                                             plantean hacer algo similar. El más avanzado es República Checa, donde un consorcio
+                                             de empresas está creando una aplicación similar para liberar pronto el código.
+                                             Singapur aún no ha liberado el suyo, pero el Gobierno asegura que lo hará
+                                             muy pronto. Cuando eso ocurra, cualquier país podría lanzar la misma
+                                             aplicación.
+                                             <!--l. 128--><p class="indent" >   Los proyectos CoEpi <span class="cite">[<a
+                                             href="#Xcoepi">3</a>]</span> y Covid-Watch <span class="cite">[<a
+                                             href="#Xcovidwatch">4</a>]</span> han abierto el código para detectar
+                                             dispositivos android y iOS a través de Bluetooth de bajo consumo. Ninguno de ellos
+                                             tiene en cuenta la distancia entre los dispositivos para definir qué es un contacto
+                                             cercano ni la ventana de tiempo para descartar falsos positivos. Sin embargo,
+                                             permiten a otros investigadores partir de una misma base. En Github la comunidad
+                                             científica lleva actualizada una lista de aplicaciones que implementan ideas similares
+                                             a <span
+                                             class="ecti-1000">TraceTogether </span><span class="cite">[<a
+                                             href="#Xshankari_2020">19</a>]</span>. En <span class="cite">[<a
+                                             href="#Xgoogle_docs_survey">5</a>]</span> se realiza una recopilación muy interesante acerca de los
+                                             avances de este tipo de aplicaciones.
+                                               
+ <h5 class="mb-4">España</h4> 
+ 
+ <p class="noindent" >el Gobierno ha comenzado a coordinar esfuerzos para recolectar datos anónimos y
+                                             agregados de los dispositivos móviles de la población (no hay datos personales
+                                             involucrados), estudiar los movimientos que realizan para poder determinar si las
+                                             medidas de confinamiento social desde la declaración del estado de alarma se
+                                             están cumpliendo. El proyecto lleva en marcha en Valencia desde hace al
+                                             menos dos semanas y ahora es oficialmente el primer piloto con el respaldo del
+                                             Gobierno. El equipo usará los datos anónimos y agregados facilitados por las
+                                             operadoras de telefonía (Telefónica, Vodafone y Orange) para extraer patrones de
+                                             movilidad de la población. A través de las diferentes aplicaciones que cada
+                                             operador desarrolla, tienen información adicional sobre tu ubicación por GPS y
+                                             hábitos de navegación. Ambos frentes combinados y unidos a los datos de
+                                             evolución de la epidemia, resultan en mapas de calor que muestran flujos
+                                             de movimiento de personas y pueden revelar aglomeraciones desconocidas
+                                             de gente en puntos de la ciudad y mayor movilidad laboral de la esperada
+                                             <span class="cite">[<a
+                                             href="#Xmendez_2020">15</a>]</span>.
+ 
+ <h5 class="mb-4">Estados Unidos</h4>
+ 
+ <p class="noindent" >En el MIT, se está trabajando actualmente en una aplicación <span
+                                             class="ecti-1000">Private-Kit: Safe Paths</span>
+                                             <span class="cite">[<a
+                                             href="#Xraskar2020apps">17</a>]</span>. La aplicación funciona como un logger para los usuarios que brinden
+                                             consentimiento la información brindada por el GPS. Esta información se almacena en
+                                             el propio dispositivo, con el propósito de que si el individuo es diagnosticado como
+                                             positivo en el futuro, se pueda brindar a un oficial de la salud los caminos por donde
+                                             circuló. Se está trabajando en proveer a los usuarios una herramienta para redactar
+                                             los caminos por los cuales el paciente ha andado para difundir esta información de
+                                             manera privada y protegida. En esta aplicación se hace gran énfasis en la privacidad
+
+
+
+                                             de los datos y protección de los usuarios, tanto positivos como negativos
+                                             <span class="cite">[<a
+                                             href="#Xadmin_2020">14</a>]</span>.
+                                             
+ <h2 class="mb-4" id="estrategias">Estrategias preliminares en estudio</h2>
+ 
+ <p class="noindent" >El LSIA del Departamento Computación <span class="cite">[<a
+                                             href="#Xlsia">1</a>]</span> se suma a la convocatoria COVID-19
+                                             dispuesta por la Universidad de Buenos Aires. Se están han estudiando las
+                                             aplicaciones empleadas por otros países frente a la pandemia, a fin de colaborar con
+                                             propuestas en el contexto argentino.
+                                             <!--l. 138--><p class="indent" >   Se adoptan dos posibles estrategias: en primer lugar, dado el gran desarrollo
+                                             realizado en aplicaciones de rastreo de contactos por proximidad, y su notoria
+                                             efectividad en Singapur, se propone una aplicación de este tipo adaptando desarrollos
+                                             de código abierto como <span class="cite">[<a
+                                             href="#Xcoepi">3</a>]</span> y <span class="cite">[<a
+                                             href="#Xcovidwatch">4</a>]</span>, y realizando las adaptaciones pertinentes para que la
+                                             misma sea de utilizable masivamente.
+                                             <!--l. 140--><p class="indent" >   Por otro lado se propone realizar una aplicación que actúe como pasaporte digital
+                                             o permiso obligatorio para quienes necesiten con motivos justificados romper la
+                                             cuarentena y movilizarse por el país. En principio, la aplicación está destinada a
+                                             usuarios que no realizan servicios de primera necesidad y en un contexto de política
+                                             de confinamiento social obligatorio.
+                                           
+ 
+ <h3 class="mb-4" id="contact_tracing">Contact Tracing</h3>
+ 
+ <p class="noindent" >Los métodos centrados en el distanciamiento social reducen la propagación del virus.
+                                             Estos métodos se basan en reducir el contacto entre personas infectadas y
+                                             susceptibles, incluso sin saber quién está infectado. En la forma más simple, esto se
+                                             logra reduciendo todos los eventos sociales y aumentando las precauciones como el
+                                             lavado de manos. Esta es una medida efectiva porque la cantidad de nuevas
+                                             infecciones es aproximadamente proporcional a la cantidad de eventos de contacto con
+                                             personas infecciosas.
+                                             <!--l. 146--><p class="indent" >   Un enfoque más específico empleado por muchas agencias de salud es el rastreo de
+                                             personas que hayan estado en contacto directo con las personas infectadas. Este
+                                             sistema funciona mediante la búsqueda y el seguimiento de contactos de pacientes que
+                                             han sido diagnosticados con COVID-19. Estas personas se ponen en aislamiento
+                                             preventivo para evitar la transmisión.
+                                             <!--l. 148--><p class="indent" >   La Organización Mundial de la Salud (OMS) define el seguimiento de
+                                             contactos como la identificación y el seguimiento de las personas que pueden
+                                             haber entrado en contacto con una persona infectada con una enfermedad
+                                             contagiosa, para ayudar a los contactos a obtener atención y tratamiento
+                                             relevantes.
+                                             
+                                              <figure>
+    <img src="../assets/images/tracing.webp" alt='Contact Tracing' />
+</figure>
+                                             
+                                             <!--l. 150--><p class="indent" >   En <span class="cite">[<a
+                                             href="#Xhellewell2020feasibility">11</a>]</span> se analizó la efectividad de utilizar una aplicación móvil simple de
+                                             rastreo de contactos directos, como en Singapur, para contener COVID-19
+                                             al comienzo de un brote. Los hallazgos son prometedores: con un 80<span style="margin-left:0.3em" class="thinspace"></span>% de
+                                             precisión en el rastreo de contactos directos y un tiempo medio de detección de
+
+
+
+                                             3.8 días después del inicio de los síntomas, es posible la contención del
+                                             virus.
+                                             <!--l. 152--><p class="indent" >   En Argentina, más de un 80<span style="margin-left:0.3em" class="thinspace"></span>% de la población lleva consigo un teléfono móvil
+                                             inteligente. El Bluetooth es un protocolo de radio que se puede usar para comunicar
+                                             de forma inalámbrica dispositivos móviles cercanos y la intensidad de la señal se
+                                             puede usar para estimar la distancia &#8212;midiendo el Indicador de Fuerza de la Señal
+                                             Recibida (RSSI)&#8212;. Se pueden grabar los eventos de contacto con otros dispositivos
+                                             cercanos mediante el envío de señales Bluetooth. Al medir la intensidad de la señal y
+                                             el número discreto de eventos de contacto, se puede estimar la duración y la distancia
+                                             de contacto entre dos teléfonos.
+                                             <!--l. 154--><p class="indent" >   Al registrar todos los eventos de contacto, se puede generar automáticamente una
+                                             lista de alta precisión de personas en riesgo cuando se diagnostica a una nueva
+                                             persona. Estas personas pueden ser notificadas inmediatamente para que se aíslen
+                                             socialmente antes de infectar a más personas.
+                                                <h5 class="subsubsectionHead" style="margin-top: 2em"><a
+                                              id="x1-120003.1"></a>Ventajas del Bluetooth sobre el GPS</h5>
+                                             <!--l. 158--><p class="noindent" >La proximidad de Bluetooth es ser método más preciso para aproximar el contacto
+                                             cercano. Además, tiene la ventaja de ser transparente. Existen ventajas significativas
+                                             del Bluetooth sobre el GPS en términos de precisión para el rastreo de contactos. Con
+                                             Bluetooth, la proximidad se puede aproximar mediante la intensidad de la
+                                             señal que se reduce por obstrucciones como paredes; por lo tanto, refleja
+                                             con mayor precisión la proximidad funcional en entornos de alto riesgo para
+                                             contacto cercano: dentro de edificios, en vehículos y aviones, y en tránsito
+                                             subterráneo.
+                                                <h5 class="subsubsectionHead" style="margin-top: 2em"><a
+                                              id="x1-130003.1"></a>Definición de contacto</h5>
+                                             <!--l. 162--><p class="noindent" >La aplicación definió que un contacto fue <span
+                                             class="ecti-1000">cercano </span>o <span
+                                             class="ecti-1000">directo </span>cuando los dispositivos
+                                             están a menos de 5 metros de distancia y durante 30 minutos de exposición <span class="cite">[<a
+                                             href="#Xbluetrace">21</a>]</span>.
+                                             Estos umbrales pueden ajustarse, de acuerdo con el criterio del equipo de
+                                             salud.
+                                             <!--l. 164--><p class="indent" >   Las librerías Proximity Beacon API de Google <span class="cite">[<a
+                                             href="#Xgoogle">6</a>]</span> o Android Beacon Library de
+                                             código libre <span class="cite">[<a
+                                             href="#Xandroid_beacon_ibrary">2</a>]</span> son opciones para estimar la distancia entre los dispositivos Bluetooth
+                                             a partir de la intensidad de la señal RSSI.
+                                             <!--l. 166--><p class="indent" >   Es deseable almacenar la información del GPS cuando se detecta un contacto
+                                             <span
+                                             class="ecti-1000">directo</span>. Esto ayudará a saber dónde y cuándo se produjo el contacto, y también
+                                             cuando se confirman los casos, dónde están zonas geográficas más afectadas.
+                                                <h5 class="subsubsectionHead" style="margin-top: 2em"><a
+                                              id="x1-140003.1"></a>Impacto</h5>
+                                             <!--l. 169--><p class="noindent" >El impacto de esta tecnología dependerá en gran medida del uso masivo de la
+                                             aplicación. Los modelos numéricos y las campañas en curso sugieren que con pruebas
+                                             exhaustivas, rastreo de contactos directos preciso y aislamiento de casos sospechosos,
+                                             se pueden contener brotes del virus.
+
+
+
+                                             <!--l. 171--><p class="indent" >   Para las pruebas iniciales un sistema como este probablemente deba usarse en
+                                             combinación con medidas de distanciamiento social y rastreo de contactos directo
+                                             manual. Sin embargo, la herramienta podría necesita se acompañada un número alto
+                                             de diagnósticos realizados a la población.
+ 
+ <h3 class="mb-4" id="qr">Empleo de QR</h4>
+ <p class="noindent" >La estrategia consistirá en una aplicación móvil que actuará como un pasaporte
+                                             digital de las personas que se movilizan en el país. Siendo esencial su portación y de
+                                             carácter obligatorio a la hora de realizar una necesidad logística, inclusive en etapas
+                                             asintomáticas del virus. En principio, la aplicación estará destinada a usuarios que
+                                             no realizan servicios, sino que los consumen y por ende deben justificar su
+                                             salida ante una política de cuarentena. El sistema se basará en la lectura y
+                                             generación de códigos QR, con la finalidad de ubicar al usuario en ventanas de
+                                             correlación georeferenciadas temporalmente y a su vez para evitar el contacto
+                                             directo entre las partes (usuario y autoridad de control) a la hora de presentar
+                                             documentación.
+                                             
+ <h2 class="mb-4" id="listado">Listado de proyectos relevantes</h4>
+ 
+ La comunidad de desarrolladores de CoePi trabajó en la <a href="https://docs.google.com/document/d/16Kh4_Q_tmyRh0-v452wiul9oQAiTRj8AdZ5vcOJum9Y/edit?ts=5e801c37#heading=h.re9hzecntx7e">recopilación de los proyectos más relevantes</a>.
+ </br>
+ 
+<table class="tableizer-table">
+<thead><tr class="tableizer-firstrow"><th>Proyecto</th><th>Tecnología</th><th>Estado</th><th>Links</th></tr></thead><tbody>
+ <tr><td>Accenture</td><td>Central GPS</td><td>?</td><td>?</td></tr>
+ <tr><td>AITIA </td><td>Self Reporting (Web)</td><td>rel</td><td>aitia.app</td></tr>
+ <tr><td>BanDemic (German)</td><td>Bluetooth</td><td>prop?</td><td>bandemic.app  Contact  repo</td></tr>
+ <tr><td>Code Orange (Israel)</td><td>Local GPS</td><td>dev ?</td><td>Design doc</td></tr>
+ <tr><td>CoEpi</td><td>Bluetooth, using Covid Watch</td><td>dev</td><td>coepi.org</td></tr>
+ <tr><td>Corona Data Scraper </td><td>Map</td><td>?</td><td>coronadatascraper.com</td></tr>
+ <tr><td>Coronastatus</td><td>Self Reporting (Web)</td><td>rel</td><td>repo</td></tr>
+ <tr><td>Corotrack</td><td>Self Reporting (Web)</td><td>gone</td><td>corotrac.com</td></tr>
+ <tr><td>Coronamap (Korea)</td><td>? MAP</td><td>rel</td><td>coronamap.site</td></tr>
+ <tr><td>Corona Network</td><td>Self Reporting (app)</td><td>demo</td><td>repo thread</td></tr>
+ <tr><td>Corona Trace</td><td>GPS + Self Reporting (App)</td><td>beta</td><td>Coronatrace.org  Google Doc repo</td></tr>
+ <tr><td>Covapp (Gemany)</td><td>Self Reporting (Web)</td><td>rel</td><td>covapp.charite.de</td></tr>
+ <tr><td>Covid-App (Gemany)</td><td>AI</td><td>prop</td><td>covid-app.de</td></tr>
+ <tr><td>Covid Flutter (India)</td><td>(Central / Global?) GPS</td><td>dev</td><td>Blog post Repo Slack </td></tr>
+ <tr><td>Covid Near You</td><td>Self Reporting (Web)</td><td>demo</td><td>covidnearyou.org</td></tr>
+ <tr><td>Covid Symptom Tracker</td><td>Self Reporting (App)</td><td>rel</td><td>Covid Symptom Tracker</td></tr>
+ <tr><td>Covid-19-Track</td><td>Self Reporting (Web)</td><td>rel</td><td>Covid-19-track.com </td></tr>
+ <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+ <tr><td>Covid Watch</td><td>Bluetooth</td><td>dev</td><td>Covid-watch.org repo  @ </td></tr>
+ <tr><td>Covid World (Sygic)</td><td>(Central / Local ?) GPS + Bluetooth</td><td>rel</td><td>Sygic post: repo;</td></tr>
+ <tr><td>CoWin-20 / Corona Kavach (India)</td><td>? GPS + Bluetooth</td><td>?</td><td>News</td></tr>
+ <tr><td>CrowdsourceRescue</td><td>?</td><td>?</td><td>crowdsourcerescue.com </td></tr>
+ <tr><td>Cubeiq</td><td>Map / Big Data</td><td>?</td><td>cuebiq.com/about/data-for-good</td></tr>
+ <tr><td>FeverMap</td><td>Map</td><td>prop</td><td>Repo </td></tr>
+ <tr><td>GeoHealth (Germany)</td><td>?</td><td>?</td><td>?</td></tr>
+ <tr><td>Ghana Health Services App</td><td>Self Reporting (App)</td><td>rel</td><td>Android </td></tr>
+ <tr><td>Hamagen (Israel)</td><td>Local GPS</td><td>prop</td><td>Repo Privacy Review;</td></tr>
+ <tr><td>Infection Chain</td><td>QR</td><td>demo</td><td>Infection Chain, Prototype; </td></tr>
+ <tr><td>Memiah</td><td>Bluetooth</td><td>demo</td><td>Repo; Google Doc; Facebook  </td></tr>
+ <tr><td>Mila (Canada)</td><td>Local GPS (Privatekit)</td><td>Prop</td><td>Google Doc; </td></tr>
+ <tr><td>NextTrace</td><td>GPS, BLE</td><td>prop</td><td>Nextrace.org Contact; </td></tr>
+ <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+ <tr><td>OpenMined</td><td>Local GPS (library)</td><td>dev</td><td>OpenMined.org Repo</td></tr>
+ <tr><td>Pandemic.Events </td><td>KML Upload</td><td>rel</td><td>pandemic.events Repo</td></tr>
+ <tr><td>Pan-European Privacy-Preserving Proximity Tracing</td><td>BLE</td><td>prop</td><td>Pepp-pt.org @ </td></tr>
+ <tr><td>Pandoa (German)</td><td>Local GPS +</td><td>dev</td><td>Pandoa; Devpost; </td></tr>
+ <tr><td>PrivateKit: Safe Paths (MIT)</td><td>Local GPS</td><td>rel</td><td>safepaths.mit.edu; Article; </td></tr>
+ <tr><td>Safetrace (Enigmampc)</td><td>KML Upload</td><td>dev</td><td>repo</td></tr>
+ <tr><td>Sneeze Map</td><td>Self Reporting (Web)</td><td>rel</td><td>sneezemap.com</td></tr>
+ <tr><td>Trace Together (Singapore)</td><td>Bluetooth, using bluetrace.io</td><td>rel</td><td>iOS Android faq news more news</td></tr>
+ <tr><td>WHO Sponsored App</td><td>Local GPS /Self-Report ?</td><td>dev</td><td>News Repo  design doc</td></tr>
+ <tr><td>Zerobase</td><td>QR</td><td>Beta</td><td>Website repo</td></tr>
+</tbody></table>   
+
+<p>Tecnología:
+<UL>
+<li>Bluetooth - uses bluetooth connections between users
+<li>Central GPS - sends GPS data to central point for analysis
+<li>Local GPS - retains GPS data on user’s device, only shared with permission
+<li>Map - Displays a map with data sourced from some other location
+<li>Web Self Report - maps generated by user’s self reporting symptoms and location
+<li>KML Upload - users upload Google location data, for comparison with data sets
+<li>QR - scans QR codes to check in at locations
+</UL>
+<p>Status
+<UL>
+<li>Gone: Website not responding, or otherwise project appears to have been abandoned
+<li>Prop (Proposal): There’s a white paper or design doc, maybe a call for volunteers but little else we’ve found.
+<li>Dev: Some people are actively working on it, nothing to show yet
+<li>Demo: Work has started, there’s a demo, Proof of Concept, or something that can be looked at
+<li>Beta: It is supposed to work, maybe bugs needs fixing so not ready to ship
+<li>Rel (Released): Its up and running - usable or downloadable by the general public
+</UL>                                
+                                             
+  <h2 class="mb-4" id="conclusiones">Conclusiones</h2>
+  <p class="noindent" >Las tecnologías móviles pueden ayudar a contener la epidemia a bajo costo social y
+                                             económico. En lugar de requerir que miles de trabajadores de la salud realicen tareas
+                                             manuales (como es el enfoque actual en China), el proceso será esencialmente
+                                             gratuito. Los sistemas aquí propuestos pueden ayudar a controlar el aislamiento
+                                             social en períodos de confinamiento obligatorio o mitigar el avance de la epidemia en
+                                             a través de los contactos sociales.
+                                             <!--l. 181--><p class="indent" >   No se descartan otras aplicaciones como estudio de grafos sociales y uso de la
+                                             blockchain para mejorar las estrategias aquí propuestas.
+   <p class="noindent" > Nuestra línea de trabajo se orienta a una arquitectura que permita la integración de tecnologías disponibles a fin de maximizar la calidad de datos y la determinación de contactos sociales, como así también la declaración de rutas de actividad  temporal  y geo posicionada de las personas  que aplican al app y  la explotación georreferencia de datos y mapas de calor.
+  <h2 class="mb-4" id="referencias">Referencias</h2>
+
+                                             <p class="bibitem" ><span class="biblabel">
+                                           <span
+                                          class="ecrm-0900">1.</span> <span class="bibsp"><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span></span></span><a
+                                           id="Xlsia"></a><a
+                                          href="http://lsia.fi.uba.ar/" class="url" ><span
+                                          class="ectt-0900">http://lsia.fi.uba.ar/</span></a>
+                                             </p>
+                                             <p class="bibitem" ><span class="biblabel">
+                                           <span
+                                          class="ecrm-0900">2.</span> <span class="bibsp"><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span></span></span><a
+                                           id="Xandroid_beacon_ibrary"></a><a
+                                          href="https://altbeacon.github.io/android-beacon-library/distance-calculations.html" class="url" ><span
+                                          class="ectt-0900">https://altbeacon.github.io/android-beacon-library/distance-calculations.html</span></a>
+                                             </p>
+                                             <p class="bibitem" ><span class="biblabel">
+                                           <span
+                                          class="ecrm-0900">3.</span> <span class="bibsp"><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span></span></span><a
+                                           id="Xcoepi"></a><span
+                                          class="ecrm-0900">Community epidemiology in action, </span><a
+                                          href="https://www.coepi.org/vision.html" class="url" ><span
+                                          class="ectt-0900">https://www.coepi.org/vision.html</span></a>
+                                             </p>
+                                             <p class="bibitem" ><span class="biblabel">
+                                           <span
+                                          class="ecrm-0900">4.</span> <span class="bibsp"><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span></span></span><a
+                                           id="Xcovidwatch"></a><span
+                                          class="ecrm-0900">Covid watch, </span><a
+                                          href="https://www.covid-watch.org/article" class="url" ><span
+                                          class="ectt-0900">https://www.covid-watch.org/article</span></a>
+                                             </p>
+                                             <p class="bibitem" ><span class="biblabel">
+                                           <span
+                                          class="ecrm-0900">5.</span> <span class="bibsp"><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span></span></span><a
+                                           id="Xgoogle_docs_survey"></a><span
+                                          class="ecrm-0900">Ecosystem        survey        -        covid19        -        contact        tracing,</span>
+                                             <a
+                                          href="https://docs.google.com/document/d/1n5dMHVZ9fRfQZTD1IJ_hGJkaFvM5N5IZeY5dLgCqXq8/edit#" class="url" ><span
+                                          class="ectt-0900">https://docs.google.com/document/d/1n5dMHVZ9fRfQZTD1IJ_hGJkaFvM5N5IZeY5dLgCqXq8/edit#</span></a>
+                                             </p>
+                                             <p class="bibitem" ><span class="biblabel">
+                                           <span
+                                          class="ecrm-0900">6.</span> <span class="bibsp"><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span></span></span><a
+                                           id="Xgoogle"></a><span
+                                          class="ecrm-0900">Overview      |      proximity      beacon      api      |      google      developers,</span>
+                                             <a
+                                          href="https://developers.google.com/beacons/proximity/guides?hl=en" class="url" ><span
+                                          class="ectt-0900">https://developers.google.com/beacons/proximity/guides?hl=en</span></a>
+                                             </p>
+                                             <p class="bibitem" ><span class="biblabel">
+                                           <span
+                                          class="ecrm-0900">7.</span> <span class="bibsp"><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span></span></span><a
+                                           id="Xcho2020contact"></a><span
+                                          class="ecrm-0900">Cho, H., Ippolito, D., Yu, Y.W.: Contact tracing mobile apps for covid-19:</span>
+                                             <span
+                                          class="ecrm-0900">Privacy  considerations  and  related  trade-offs.  arXiv  preprint  arXiv:2003.11511</span>
+                                             <span
+                                          class="ecrm-0900">(2020)</span>
+                                             </p>
+                                             <p class="bibitem" ><span class="biblabel">
+                                           <span
+                                          class="ecrm-0900">8.</span> <span class="bibsp"><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span></span></span><a
+                                           id="Xdong2020interactive"></a><span
+                                          class="ecrm-0900">Dong, E., Du, H., Gardner, L.: An interactive web-based dashboard to track</span>
+                                             <span
+                                          class="ecrm-0900">covid-19 in real time. The Lancet Infectious Diseases (2020)</span>
+                                             </p>
+                                             <p class="bibitem" ><span class="biblabel">
+                                           <span
+                                          class="ecrm-0900">9.</span> <span class="bibsp"><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span></span></span><a
+                                           id="Xferretti2020quantifying"></a><span
+                                          class="ecrm-0900">Ferretti, L., Wymant, C., Kendall, M., Zhao, L., Nurtay, A., Bonsall, D.G.,</span>
+                                             <span
+                                          class="ecrm-0900">Fraser, C.: Quantifying dynamics of sars-cov-2 transmission suggests that epidemic</span>
+                                             <span
+                                          class="ecrm-0900">control and avoidance is feasible through instantaneous digital contact tracing.</span>
+                                             <span
+                                          class="ecrm-0900">medRxiv (2020)</span>
+                                             </p>
+                                             <p class="bibitem" ><span class="biblabel">
+                                          <span
+                                          class="ecrm-0900">10.</span> <span class="bibsp"><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span></span></span><a
+                                           id="Xhebert2020beyond"></a><span
+                                          class="ecrm-0900">H</span><span
+                                          class="ecrm-0900">ébert-Dufresne, L., Althouse, B.M., Scarpino, S.V., Allard, A.: Beyond </span><span
+                                          class="cmmi-9">r</span>_<span
+                                          class="cmr-9">0</span><span
+                                          class="ecrm-0900">:</span>
+                                             <span
+                                          class="ecrm-0900">the  importance  of  contact  tracing  when  predicting  epidemics.  arXiv  preprint</span>
+                                             <span
+                                          class="ecrm-0900">arXiv:2002.04004 (2020)</span>
+                                             </p>
+                                             <p class="bibitem" ><span class="biblabel">
+                                          <span
+                                          class="ecrm-0900">11.</span> <span class="bibsp"><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span></span></span><a
+                                           id="Xhellewell2020feasibility"></a><span
+                                          class="ecrm-0900">Hellewell, J., Abbott, S., Gimma, A., Bosse, N.I., Jarvis, C.I., Russell, T.W.,</span>
+                                             <span
+                                          class="ecrm-0900">Munday,  J.D.,  Kucharski,  A.J.,  Edmunds,  W.J.,  Sun,  F.,  et</span><span
+                                          class="ecrm-0900">&#x00A0;al.:  Feasibility  of</span>
+                                             <span
+                                          class="ecrm-0900">controlling  covid-19  outbreaks  by  isolation  of  cases  and  contacts.  The  Lancet</span>
+                                             <span
+                                          class="ecrm-0900">Global Health (2020)</span>
+
+
+
+                                             </p>
+                                             <p class="bibitem" ><span class="biblabel">
+                                          <span
+                                          class="ecrm-0900">12.</span> <span class="bibsp"><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span></span></span><a
+                                           id="Xlee_2020"></a><span
+                                          class="ecrm-0900">Lee,         Y.:         Taiwan&#8217;s         new         &#8217;electronic         fence&#8217;         for</span>
+                                             <span
+                                          class="ecrm-0900">quarantines      leads      wave      of      virus      monitoring      (Mar      2020),</span>
+                                             <a
+                                          href="https://www.reuters.com/article/us-health-coronavirus-taiwan-surveillanc-idUSKBN2170SK" class="url" ><span
+                                          class="ectt-0900">https://www.reuters.com/article/us-health-coronavirus-taiwan-surveillanc-idUSKBN2170SK</span></a>
+                                             </p>
+                                             <p class="bibitem" ><span class="biblabel">
+                                          <span
+                                          class="ecrm-0900">13.</span> <span class="bibsp"><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span></span></span><a
+                                           id="Xmcneil_2020"></a><span
+                                          class="ecrm-0900">Mcneil,  D.G.:  Inside  china&#8217;s  all-out  war  on  the  coronavirus  (Mar  2020),</span>
+                                             <a
+                                          href="https://www.nytimes.com/2020/03/04/health/coronavirus-china-aylward.html" class="url" ><span
+                                          class="ectt-0900">https://www.nytimes.com/2020/03/04/health/coronavirus-china-aylward.html</span></a>
+                                             </p>
+                                             <p class="bibitem" ><span class="biblabel">
+                                          <span
+                                          class="ecrm-0900">14.</span> <span class="bibsp"><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span></span></span><a
+                                           id="Xadmin_2020"></a><span
+                                          class="ecrm-0900">MIT:  Restarting  the  economy  and  avoiding  big  brother  (Mar  2020),</span>
+                                             <a
+                                          href="https://bostonglobalforum.org/publications/restarting-the-economy-and-avoiding-big-brother/" class="url" ><span
+                                          class="ectt-0900">https://bostonglobalforum.org/publications/restarting-the-economy-and-avoiding-big-brother/</span></a>
+                                             </p>
+                                             <p class="bibitem" ><span class="biblabel">
+                                          <span
+                                          class="ecrm-0900">15.</span> <span class="bibsp"><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span></span></span><a
+                                           id="Xmendez_2020"></a><span
+                                          class="ecrm-0900">M</span><span
+                                          class="ecrm-0900">éndez,      M.,      Villarino,      ,      Mcloughlin,      M.,      Pascual,      A.,</span>
+                                             <span
+                                          class="ecrm-0900">Aldama,    Z.,    Shangh</span><span
+                                          class="ecrm-0900">ái:    El    gobierno    iniciar</span><span
+                                          class="ecrm-0900">á    el    rastreo    de    m</span><span
+                                          class="ecrm-0900">óviles</span>
+                                             <span
+                                          class="ecrm-0900">con    ccaa    y    operadoras    para    combatir    el    virus    (Mar    2020),</span>
+                                             <a
+                                          href="https://www.elconfidencial.com/tecnologia/2020-03-23/coronavirus-moviles-telecomunicaciones-antenas-covid19_2508268/" class="url" ><span
+                                          class="ectt-0900">https://www.elconfidencial.com/tecnologia/2020-03-23/coronavirus-moviles-telecomunicaciones-antenas-covid19_2508268/</span></a>
+                                             </p>
+                                             <p class="bibitem" ><span class="biblabel">
+                                          <span
+                                          class="ecrm-0900">16.</span> <span class="bibsp"><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span></span></span><a
+                                           id="Xnormilemar_voosenmar_cohenmar_ortega_ortega_ortega_2020"></a><span
+                                          class="ecrm-0900">NormileMar,    D.,    VoosenMar,    P.,    CohenMar,    J.,    Ortega,    R.P.,</span>
+                                             <span
+                                          class="ecrm-0900">Ortega,   R.P.,   Ortega,   R.P.:   Coronavirus   cases   have   dropped   sharply</span>
+                                             <span
+                                          class="ecrm-0900">in    south    korea.    what&#8217;s    the    secret    to    its    success?    (Mar    2020),</span>
+                                             <a
+                                          href="https://www.sciencemag.org/news/2020/03/coronavirus-cases-have-dropped-sharply-south-korea-whats-secret-its-success" class="url" ><span
+                                          class="ectt-0900">https://www.sciencemag.org/news/2020/03/coronavirus-cases-have-dropped-sharply-south-korea-whats-secret-its-success</span></a>
+                                             </p>
+                                             <p class="bibitem" ><span class="biblabel">
+                                          <span
+                                          class="ecrm-0900">17.</span> <span class="bibsp"><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span></span></span><a
+                                           id="Xraskar2020apps"></a><span
+                                          class="ecrm-0900">Raskar, R., Schunemann, I., Barbar, R., Vilcans, K., Gray, J., Vepakomma, P.,</span>
+                                             <span
+                                          class="ecrm-0900">Kapa, S., Nuzzo, A., Gupta, R., Berke, A., et</span><span
+                                          class="ecrm-0900">&#x00A0;al.: Apps gone rogue: Maintaining</span>
+                                             <span
+                                          class="ecrm-0900">personal privacy in an epidemic. arXiv preprint arXiv:2003.08567 (2020)</span>
+                                             </p>
+                                             <p class="bibitem" ><span class="biblabel">
+                                          <span
+                                          class="ecrm-0900">18.</span> <span class="bibsp"><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span></span></span><a
+                                           id="Xrodriguez2020covid"></a><span
+                                          class="ecrm-0900">Rodriguez-Morales, A., Tiwari, R., Sah, R., Dhama, K.: Covid-19, an emerging</span>
+                                             <span
+                                          class="ecrm-0900">coronavirus  infection:  Current  scenario  and  recent  developments-an  overview.</span>
+                                             <span
+                                          class="ecrm-0900">Journal of Pure and Applied Microbiology 14, 6150 (2020)</span>
+                                             </p>
+                                             <p class="bibitem" ><span class="biblabel">
+                                          <span
+                                          class="ecrm-0900">19.</span> <span class="bibsp"><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span></span></span><a
+                                           id="Xshankari_2020"></a><span
+                                          class="ecrm-0900">Shankari:          shankari/covid-19-tracing-projects          (Mar          2020),</span>
+                                             <a
+                                          href="https://github.com/shankari/covid-19-tracing-projects" class="url" ><span
+                                          class="ectt-0900">https://github.com/shankari/covid-19-tracing-projects</span></a>
+                                             </p>
+                                             <p class="bibitem" ><span class="biblabel">
+                                          <span
+                                          class="ecrm-0900">20.</span> <span class="bibsp"><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span></span></span><a
+                                           id="Xtidy_2020"></a><span
+                                          class="ecrm-0900">Tidy,  J.:  Coronavirus:  Israel  enables  emergency  spy  powers  (Mar  2020),</span>
+                                             <a
+                                          href="https://www.bbc.com/news/technology-51930681" class="url" ><span
+                                          class="ectt-0900">https://www.bbc.com/news/technology-51930681</span></a>
+                                             </p>
+                                             <p class="bibitem" ><span class="biblabel">
+                                          <span
+                                          class="ecrm-0900">21.</span> <span class="bibsp"><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span></span></span><a
+                                           id="Xbluetrace"></a><span
+                                          class="ecrm-0900">Updated, .M...: Bluetrace manifesto, </span><a
+                                          href="https://tracetogether.zendesk.com/hc/en-sg/articles/360044883814-BlueTrace-Manifesto" class="url" ><span
+                                          class="ectt-0900">https://tracetogether.zendesk.com/hc/en-sg/articles/360044883814-BlueTrace-Manifesto</span></a>
+                                             </p>
+                                             <p class="bibitem" ><span class="biblabel">
+                                          <span
+                                          class="ecrm-0900">22.</span> <span class="bibsp"><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span></span></span><a
+                                           id="Xwang2020response"></a><span
+                                          class="ecrm-0900">Wang, C.J., Ng, C.Y., Brook, R.H.: Response to covid-19 in taiwan: big data</span>
+                                             <span
+                                          class="ecrm-0900">analytics, new technology, and proactive testing. JAMA (2020)</span>
+
+
+
+                                             </p>
+                                             <p class="bibitem" ><span class="biblabel">
+                                          <span
+                                          class="ecrm-0900">23.</span> <span class="bibsp"><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span><span
+                                          class="ecrm-0900">&#x00A0;</span></span></span><a
+                                           id="Xwood2020infections"></a><span
+                                          class="ecrm-0900">Wood,  C.:  Infections  without  borders:  a  new  coronavirus  in  wuhan,  china.</span>
+                                             <span
+                                          class="ecrm-0900">British Journal of Nursing 29(3), 166&#8211;167 (2020)</span>
+                                          </p>
+                                             
+
+      </div>
+		</div>
+</div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
