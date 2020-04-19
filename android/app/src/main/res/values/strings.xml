@@ -8,6 +8,9 @@
     <string name="location_permission_request_message">Por favor para poder tener mejores resultados en la detección de posibles casos, recomendamos acepte dar permisos para obtener su localización. Muchas gracias</string>
     <string name="acept">Aceptar</string>
     <string name="camera_error_message">Se necesitan permisos a la camaera para utilizar esta funcionalidad.</string>
+    <string name="manual_contact_message">Por favor ingrese el número de dni del contacto.</string>
+    <string name="manual_contact_registration">Registrar contacto</string>
+    <string name="manual_contact_empty_menssage">Por favor ingrese un dni.</string>
     <string name="qr_generator">Generador de QR</string>
     <string name="qr_generator_site">Ingrese el nombre del lugar</string>
     <string name="qr_generator_room">Ingrese nombre de la habitación</string>
