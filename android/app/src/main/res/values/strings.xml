@@ -11,4 +11,9 @@
     <string name="manual_contact_message">Por favor ingrese el número de dni del contacto.</string>
     <string name="manual_contact_registration">Registrar contacto</string>
     <string name="manual_contact_empty_menssage">Por favor ingrese un dni.</string>
+    <string name="qr_generator">Generador de QR</string>
+    <string name="qr_generator_site">Ingrese el nombre del lugar</string>
+    <string name="qr_generator_room">Ingrese nombre de la habitación</string>
+    <string name="qr_generator_generate">Generar código QR</string>
+    <string name="qr_generator_invalid">Por favor ingrese lugar y habitación.</string>
 </resources>
