@@ -19,6 +19,7 @@ import com.fiuba.cuarentenainteligente.utils.GpsUtils.Companion.GPS_REQUEST
 import com.fiuba.cuarentenainteligente.utils.GpsUtils.Companion.LOCATION_REQUEST
 import com.fiuba.cuarentenainteligente.view.fragments.contact.ContactCongrats
 import com.fiuba.cuarentenainteligente.view.fragments.contact.ContactSelectorFragment
+import com.fiuba.cuarentenainteligente.view.fragments.contact.ManualContactFragment
 import com.fiuba.cuarentenainteligente.view.fragments.contact.QrReaderFragment
 import com.fiuba.cuarentenainteligente.viewmodel.location.LocationViewModel
 
@@ -144,6 +145,14 @@ class ContactActivity : AppCompatActivity() {
         }
     }
 
+    fun replaceToManualContactFragment() {
+        supportFragmentManager.commit {
+            addToBackStack(ManualContactFragment.TAG)
+            setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+            replace(R.id.contact_container, ManualContactFragment.newInstance())
+        }
+    }
+
     fun replaceToContactCongratsFragment(person: Person) {
         supportFragmentManager.commit {
             addToBackStack(QrReaderFragment.TAG)
@@ -169,4 +178,5 @@ class ContactActivity : AppCompatActivity() {
             super.onBackPressed()
         }
     }
+
 }

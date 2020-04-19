@@ -31,7 +31,7 @@ class ContactSelectorFragment : Fragment() {
             (activity as ContactActivity).replaceToQrFragment()
         }
         manual_contact_button.setOnClickListener {
-
+            (activity as ContactActivity).replaceToManualContactFragment()
         }
     }
 }
