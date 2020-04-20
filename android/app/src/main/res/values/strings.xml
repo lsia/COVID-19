@@ -16,4 +16,6 @@
     <string name="qr_generator_room">Ingrese nombre de la habitación</string>
     <string name="qr_generator_generate">Generar código QR</string>
     <string name="qr_generator_invalid">Por favor ingrese lugar y habitación.</string>
+    <string name="survey">Encuesta</string>
+    <string name="survey_confirm">Enviar encuesta</string>
 </resources>

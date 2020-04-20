@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.fiuba.cuarentenainteligente.R
 import com.fiuba.cuarentenainteligente.view.activities.contact.ContactActivity
 import com.fiuba.cuarentenainteligente.view.activities.qrgenerator.QrGeneratorActivity
+import com.fiuba.cuarentenainteligente.view.activities.survey.SurveyActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 // Es temporal hasta que tengamos el flujo, la idea es ir volcando features
@@ -13,7 +14,7 @@ class SelectorActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+       setContentView(R.layout.activity_main)
 
         dni_button.setOnClickListener {
             startActivity(Intent(this, DniActivity::class.java))
@@ -25,6 +26,10 @@ class SelectorActivity : AppCompatActivity() {
 
         qr_generator_button.setOnClickListener {
             startActivity(Intent(this, QrGeneratorActivity::class.java))
+        }
+
+        survey_button.setOnClickListener {
+            startActivity(Intent(this, SurveyActivity::class.java))
         }
 
     }
