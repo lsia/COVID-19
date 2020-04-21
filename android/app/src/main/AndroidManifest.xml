@@ -7,6 +7,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".MyApplication"
@@ -17,24 +18,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.activities.SelectorActivity">
+        <activity android:name=".view.activities.auth.passRecover.PassRecoveryActivity"></activity>
+        <activity android:name=".view.activities.auth.signup.SignUpActivity" />
+        <activity android:name=".view.activities.auth.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".view.activities.SelectorActivity" />
         <activity android:name=".view.activities.DniActivity" />
-
         <activity
             android:name=".view.activities.contact.ContactActivity"
             android:windowSoftInputMode="adjustResize" />
-
         <activity android:name=".view.activities.qrgenerator.QrGeneratorActivity" />
-
         <activity android:name=".view.activities.survey.SurveyActivity" />
-
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="fullSensor"
@@ -43,7 +42,6 @@
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/ic_launcher_background" />
-
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@drawable/ic_launcher_background" />
