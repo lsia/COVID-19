@@ -18,4 +18,12 @@
     <string name="qr_generator_invalid">Por favor ingrese lugar y habitación.</string>
     <string name="survey">Encuesta</string>
     <string name="survey_confirm">Enviar encuesta</string>
+    <string name="not_an_account_yet_register">Registrarse</string>
+    <string name="ingrese_su_dni">Ingrese su Dni</string>
+    <string name="ingrese_su_email">Ingrese su email</string>
+    <string name="ingrese_una_contrase_a">Ingrese una contraseña</string>
+    <string name="confirme_su_contrase_a">Confirme su contraseña</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="ingrese_su_contrase_a">Ingrese su contraseña</string>
+    <string name="olvido_su_contrase_a">Olvido su contraseña?</string>
 </resources>
