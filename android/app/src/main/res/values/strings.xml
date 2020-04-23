@@ -26,4 +26,5 @@
     <string name="registrarse">Registrarse</string>
     <string name="ingrese_su_contrase_a">Ingrese su contraseña</string>
     <string name="olvido_su_contrase_a">Olvido su contraseña?</string>
+    <string name="ingresar">Ingresar</string>
 </resources>
