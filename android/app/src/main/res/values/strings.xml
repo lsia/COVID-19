@@ -18,4 +18,10 @@
     <string name="qr_generator_invalid">Por favor ingrese lugar y habitación.</string>
     <string name="survey">Encuesta</string>
     <string name="survey_confirm">Enviar encuesta</string>
+    <string name="title_activity_bottom_nav">BottomNavActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="profile">Perfil</string>
+    <string name="qr_scanner">Escannear QR</string>
 </resources>
