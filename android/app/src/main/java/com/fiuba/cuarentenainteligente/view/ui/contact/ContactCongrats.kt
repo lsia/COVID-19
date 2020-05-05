@@ -1,4 +1,4 @@
-package com.fiuba.cuarentenainteligente.view.fragments.contact
+package com.fiuba.cuarentenainteligente.view.ui.contact
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -20,7 +20,8 @@ class ContactCongrats : Fragment() {
             person: Person,
             latestLocation: LocationModel?
         ): ContactCongrats {
-            val fragment = ContactCongrats()
+            val fragment =
+                ContactCongrats()
             val bundle = Bundle().apply {
                 putParcelable(PERSON_RESULT_ARG, person)
                 putParcelable(LOCATION_MODEL_ARG, latestLocation)

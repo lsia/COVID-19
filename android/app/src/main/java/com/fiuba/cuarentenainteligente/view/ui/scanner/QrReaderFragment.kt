@@ -1,4 +1,4 @@
-package com.fiuba.cuarentenainteligente.view.fragments.contact
+package com.fiuba.cuarentenainteligente.view.ui.scanner
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import com.fiuba.cuarentenainteligente.R
 import com.fiuba.cuarentenainteligente.model.contact.Person
 import com.fiuba.cuarentenainteligente.view.activities.contact.ContactActivity
+import com.fiuba.cuarentenainteligente.view.ui.contact.ContactFragment
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.client.android.BeepManager
 import com.journeyapps.barcodescanner.DecoratedBarcodeView
@@ -53,7 +54,8 @@ class QrReaderFragment : Fragment() {
             startCamera()
         } else {
             requestPermissions(
-                arrayOf(Manifest.permission.CAMERA), CAMERA_PERMISSION
+                arrayOf(Manifest.permission.CAMERA),
+                CAMERA_PERMISSION
             )
         }
 
@@ -76,7 +78,7 @@ class QrReaderFragment : Fragment() {
                         splitedText[3],
                         splitedText[6]
                     )
-                    (activity as ContactActivity).replaceToContactCongratsFragment(person)
+                    (activity as ContactFragment).replaceToContactCongratsFragment(person)
                 }
             }
         }

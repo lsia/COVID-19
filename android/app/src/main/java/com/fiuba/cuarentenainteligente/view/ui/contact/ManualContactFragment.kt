@@ -1,4 +1,4 @@
-package com.fiuba.cuarentenainteligente.view.fragments.contact
+package com.fiuba.cuarentenainteligente.view.ui.contact
 
 import android.os.Bundle
 import android.view.LayoutInflater

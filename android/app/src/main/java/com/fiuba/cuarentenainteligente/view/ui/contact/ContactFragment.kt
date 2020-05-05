@@ -1,9 +1,13 @@
-package com.fiuba.cuarentenainteligente.view.activities.contact
+package com.fiuba.cuarentenainteligente.view.ui.contact
 
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -11,41 +15,48 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.commit
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+
 import com.fiuba.cuarentenainteligente.R
 import com.fiuba.cuarentenainteligente.model.contact.Person
 import com.fiuba.cuarentenainteligente.model.location.LocationModel
 import com.fiuba.cuarentenainteligente.utils.GpsUtils
-import com.fiuba.cuarentenainteligente.utils.GpsUtils.Companion.GPS_REQUEST
-import com.fiuba.cuarentenainteligente.utils.GpsUtils.Companion.LOCATION_REQUEST
-import com.fiuba.cuarentenainteligente.view.ui.contact.ContactCongrats
-import com.fiuba.cuarentenainteligente.view.ui.contact.ContactSelectorFragment
-import com.fiuba.cuarentenainteligente.view.ui.contact.ManualContactFragment
 import com.fiuba.cuarentenainteligente.view.ui.scanner.QrReaderFragment
 import com.fiuba.cuarentenainteligente.viewmodel.location.LocationViewModel
 
-class ContactActivity : AppCompatActivity() {
+
+class ContactFragment : Fragment() {
+
     private lateinit var locationViewModel: LocationViewModel
     private var isGPSEnabled = false
     private var latestLocation: LocationModel? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_contact)
-
         locationViewModel = ViewModelProvider(this).get(LocationViewModel::class.java)
-        GpsUtils(this).turnGPSOn(object : GpsUtils.OnGpsListener {
+        activity?.let {
+            GpsUtils(it).turnGPSOn(object : GpsUtils.OnGpsListener {
 
-            override fun gpsStatus(isGPSEnable: Boolean) {
-                this@ContactActivity.isGPSEnabled = isGPSEnable
-            }
-        })
+                override fun gpsStatus(isGPSEnable: Boolean) {
+                    this@ContactFragment.isGPSEnabled = isGPSEnable
+
+                }
+            })
+        }
 
         if (savedInstanceState == null) {
-            supportFragmentManager.commit {
+            activity?.supportFragmentManager?.commit {
                 add(R.id.contact_container, ContactSelectorFragment.newInstance())
             }
         }
 
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_contact, container, false)
     }
 
     override fun onStart() {
@@ -54,8 +65,8 @@ class ContactActivity : AppCompatActivity() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (resultCode == RESULT_OK) {
-            if (requestCode == GPS_REQUEST) {
+        if (resultCode == AppCompatActivity.RESULT_OK) {
+            if (requestCode == GpsUtils.GPS_REQUEST) {
                 isGPSEnabled = true
                 invokeLocationAction()
             }
@@ -71,7 +82,7 @@ class ContactActivity : AppCompatActivity() {
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         when (requestCode) {
-            LOCATION_REQUEST -> {
+            GpsUtils.LOCATION_REQUEST -> {
                 // If request is cancelled, the result arrays are empty.
                 if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
                     invokeLocationAction()
@@ -88,27 +99,26 @@ class ContactActivity : AppCompatActivity() {
         }
     }
 
-    private fun requestPermissions() {
-        ActivityCompat.requestPermissions(
-            this,
-            arrayOf(
-                Manifest.permission.ACCESS_FINE_LOCATION,
-                Manifest.permission.ACCESS_COARSE_LOCATION
-            ), LOCATION_REQUEST
-        )
+    private fun startLocationUpdate() {
+        locationViewModel.getLocationData().observe(this, Observer {
+            it?.let {
+                latestLocation = it
+            }
+        })
+
     }
 
     private fun checkPermissions(): Boolean {
         if (ActivityCompat.checkSelfPermission(
-                this,
+                requireActivity(),
                 Manifest.permission.ACCESS_FINE_LOCATION
             ) != PackageManager.PERMISSION_GRANTED ||
             ActivityCompat.checkSelfPermission(
-                this,
+                requireActivity(),
                 Manifest.permission.ACCESS_COARSE_LOCATION
             ) != PackageManager.PERMISSION_GRANTED
         ) {
-            val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+            val builder: AlertDialog.Builder = AlertDialog.Builder(requireActivity())
             builder.setTitle(R.string.location_permission_request_title)
             builder.setMessage(R.string.location_permission_request_message)
 
@@ -128,19 +138,18 @@ class ContactActivity : AppCompatActivity() {
         }
     }
 
-    private fun startLocationUpdate() {
-        locationViewModel.getLocationData().observe(this, Observer {
-            it?.let {
-                latestLocation = it
-            }
-        })
-
+    private fun requestPermissions() {
+        ActivityCompat.requestPermissions(
+            requireActivity(),
+            arrayOf(
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            ), GpsUtils.LOCATION_REQUEST
+        )
     }
 
-
-
     fun replaceToManualContactFragment() {
-        supportFragmentManager.commit {
+        activity?.supportFragmentManager?.commit {
             addToBackStack(ManualContactFragment.TAG)
             setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
             replace(R.id.contact_container, ManualContactFragment.newInstance())
@@ -148,29 +157,16 @@ class ContactActivity : AppCompatActivity() {
     }
 
     fun replaceToContactCongratsFragment(person: Person) {
-        supportFragmentManager.commit {
+        activity?.supportFragmentManager?.commit {
             addToBackStack(QrReaderFragment.TAG)
             setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-            locationViewModel.getLocationData().removeObservers(this@ContactActivity)
+            locationViewModel.getLocationData().removeObservers(requireActivity())
             replace(R.id.contact_container, ContactCongrats.newInstance(person, latestLocation))
         }
     }
 
-    override fun onBackPressed() {
-        var mustFinish = false
-        //workaround to finalize the congrats flow
-        if (supportFragmentManager.fragments.size > 0) {
-            supportFragmentManager.fragments.forEach {
-                if (it is ContactCongrats) {
-                    mustFinish = true
-                }
-            }
-        }
-        if (mustFinish) {
-            finish()
-        } else {
-            super.onBackPressed()
-        }
-    }
+
 
 }
+
+

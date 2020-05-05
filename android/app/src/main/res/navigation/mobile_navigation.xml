@@ -8,15 +8,32 @@
         android:id="@+id/nav_profile"
         android:name="com.fiuba.cuarentenainteligente.view.ui.profile.profileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_nav_profile_to_contactFragment"
+            app:destination="@id/contactActivity" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_qr"
-        android:name="com.fiuba.cuarentenainteligente.view.fragments.contact.QrReaderFragment"
+        android:name="com.fiuba.cuarentenainteligente.view.ui.scanner.QrReaderFragment"
         android:label="QrReaderFragment" />
     <fragment
         android:id="@+id/nav_survey"
         android:name="com.fiuba.cuarentenainteligente.view.ui.survey.surveyFragment"
         android:label="surveyFragment" />
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="com.fiuba.cuarentenainteligente.view.ui.contact.ContactFragment"
+        android:label="contactFragment" />
+    <activity
+        android:id="@+id/contactActivity"
+        android:name="com.fiuba.cuarentenainteligente.view.activities.contact.ContactActivity"
+        android:label="ContactActivity" />
+    <fragment
+        android:id="@+id/nav_gr_gen"
+        android:name="com.fiuba.cuarentenainteligente.view.ui.contact.QrGeneratorFragment"
+        android:label="QrGeneratorFragment" />
+
 
 </navigation>

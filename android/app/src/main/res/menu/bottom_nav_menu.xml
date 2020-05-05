@@ -16,4 +16,6 @@
         android:icon="@drawable/qr"
         android:title="@string/qr_scanner" />
 
+
+
 </menu>

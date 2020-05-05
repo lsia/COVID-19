@@ -1,4 +1,4 @@
-package com.fiuba.cuarentenainteligente.view.fragments.contact
+package com.fiuba.cuarentenainteligente.view.ui.contact
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -27,9 +27,7 @@ class ContactSelectorFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        qr_contact_button.setOnClickListener {
-            (activity as ContactActivity).replaceToQrFragment()
-        }
+
         manual_contact_button.setOnClickListener {
             (activity as ContactActivity).replaceToManualContactFragment()
         }
