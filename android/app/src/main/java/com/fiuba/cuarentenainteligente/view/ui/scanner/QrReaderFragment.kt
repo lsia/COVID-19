@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.fiuba.cuarentenainteligente.R
 import com.fiuba.cuarentenainteligente.model.contact.Person
 import com.fiuba.cuarentenainteligente.view.activities.contact.ContactActivity
@@ -69,7 +70,7 @@ class QrReaderFragment : Fragment() {
         barcodeView?.decodeSingle {
             if (it?.result?.text != null) {
                 val splitedText = it.result.text.split("@")
-                if (splitedText.size == 8) {
+                if (splitedText.size == 9) {
                     beepManager.playBeepSoundAndVibrate()
                     val person = Person(
                         splitedText[4],
@@ -78,7 +79,10 @@ class QrReaderFragment : Fragment() {
                         splitedText[3],
                         splitedText[6]
                     )
+                    //TODO corregir invocacionn
+                    // ContactFragment().replaceToContactCongratsFragment(person)
                     (activity as ContactFragment).replaceToContactCongratsFragment(person)
+
                 }
             }
         }
